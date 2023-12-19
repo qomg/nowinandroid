@@ -68,6 +68,7 @@ dependencies {
     implementation(projects.core.designsystem)
     implementation(projects.core.ui)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidbrowserhelper)
 }
 
 dependencyGuard {
