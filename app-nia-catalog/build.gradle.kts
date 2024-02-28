@@ -65,10 +65,15 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.activity.compose)
+
     implementation(projects.core.designsystem)
     implementation(projects.core.ui)
+<<<<<<< HEAD
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidbrowserhelper)
+=======
+>>>>>>> 1d2029aa2c4273ff75a9239112f32800800bd26b
 }
 
 dependencyGuard {

@@ -81,9 +81,9 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.util.trace
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.tracing.trace
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionStatus.Denied
 import com.google.accompanist.permissions.rememberPermissionState
@@ -217,7 +217,7 @@ internal fun ForYouScreen(
                 targetOffsetY = { fullHeight -> -fullHeight },
             ) + fadeOut(),
         ) {
-            val loadingContentDescription = stringResource(id = R.string.for_you_loading)
+            val loadingContentDescription = stringResource(id = R.string.feature_foryou_loading)
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -272,7 +272,7 @@ private fun LazyStaggeredGridScope.onboarding(
             item(span = StaggeredGridItemSpan.FullLine, contentType = "onboarding") {
                 Column(modifier = interestsItemModifier) {
                     Text(
-                        text = stringResource(R.string.onboarding_guidance_title),
+                        text = stringResource(R.string.feature_foryou_onboarding_guidance_title),
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -280,7 +280,7 @@ private fun LazyStaggeredGridScope.onboarding(
                         style = MaterialTheme.typography.titleMedium,
                     )
                     Text(
-                        text = stringResource(R.string.onboarding_guidance_subtitle),
+                        text = stringResource(R.string.feature_foryou_onboarding_guidance_subtitle),
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(top = 8.dp, start = 24.dp, end = 24.dp),
@@ -306,7 +306,7 @@ private fun LazyStaggeredGridScope.onboarding(
                                 .fillMaxWidth(),
                         ) {
                             Text(
-                                text = stringResource(R.string.done),
+                                text = stringResource(R.string.feature_foryou_done),
                             )
                         }
                     }
@@ -435,9 +435,10 @@ fun TopicIcon(
     modifier: Modifier = Modifier,
 ) {
     DynamicAsyncImage(
-        placeholder = painterResource(R.drawable.ic_icon_placeholder),
+        placeholder = painterResource(R.drawable.feature_foryou_ic_icon_placeholder),
         imageUrl = imageUrl,
-        contentDescription = null, // decorative
+        // decorative
+        contentDescription = null,
         modifier = modifier
             .padding(10.dp)
             .size(32.dp),
